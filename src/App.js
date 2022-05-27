@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
 
-function App() {
+/// Components
+import Markup from "./jsx";
+
+/// Style
+// import "./css/style.css";
+import "./vendor/bootstrap-select/dist/css/bootstrap-select.min.css";
+
+import { withResizeDetector } from "react-resize-detector";
+
+const App = ({ width }) => {
+  const body = document.querySelector("body");
+
+  width >= 1300
+    ? body.setAttribute("data-sidebar-style", "full")
+    : width <= 1299 && width >= 767
+    ? body.setAttribute("data-sidebar-style", "mini")
+    : body.setAttribute("data-sidebar-style", "overlay");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Markup />
+    </Fragment>
   );
-}
+};
 
-export default App;
+export default withResizeDetector(App);
