@@ -4,12 +4,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 /// Css
-// import "./index.css";
+import "./index.css";
+import "./chart.css";
 
-// /// Layout
+/// Layout
 import Nav from "./layouts/nav";
-// import Footer from "./layouts/Footer";
-
+import Footer from "./layouts/Footer";
 /// Deshboard
 import Home from "./components/Dashboard/Home/Home";
 
@@ -37,7 +37,7 @@ const Markup = () => {
             </Routes>
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );
